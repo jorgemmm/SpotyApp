@@ -14,12 +14,18 @@ export class SearchComponent implements OnInit {
   newReleases:any[]=[];
 
   newArtistSeek:any[]=[];
+  loading: boolean;
 
+  
   constructor(
     private _spotifyService: SpotifyService
-  ) { }
+  ) { 
+
+    
+  }
 
   ngOnInit(): void {
+    
     // this._spotifyService.getNewReleases()
     // .subscribe(  (data:any) => {         
     // console.log(data.albums.items); 
@@ -28,14 +34,24 @@ export class SearchComponent implements OnInit {
   }
 
   searchArtist(termino:string){
-    console.log(termino);
-    this._spotifyService.getArtist(termino)
-       .subscribe( ( data:any )=>{
-        // console.log(data);//.artists.items);
+    
+    if(termino.length>2){
 
-        this.newArtistSeek=data;//.artists.items;
-       });
-
+        this.loading=true;
+        console.log(termino);
+        this._spotifyService.getArtists(termino)
+          .subscribe( ( data:any )=>{
+            
+            console.log(data);//.artists.items);
+    
+            this.newArtistSeek=data;//.artists.items;
+            this.loading=false;
+          });
+    }
+   
+      
+      
+      
   }
 
 }

@@ -1,6 +1,12 @@
+# Getting Starter
+
+before donwload or clone project 
+<p> npm install <p>
+<p> npm start </p> 
+
 # Spotyfy
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5. but update to 12.0.1
 
 ## Development server
 

@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
   
   newReleases:any[]=[];
 
-  newArtistSeek:any[]=[];
+  Artists:any[]=[];
   loading: boolean;
 
   
@@ -44,7 +44,7 @@ export class SearchComponent implements OnInit {
             
             console.log(data);//.artists.items);
     
-            this.newArtistSeek=data;//.artists.items;
+            this.Artists=data;//.artists.items;
             this.loading=false;
           });
     }
